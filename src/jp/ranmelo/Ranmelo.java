@@ -7,7 +7,7 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 
 public class Ranmelo extends Activity {
-	private TelephonyManager _m_TelManager;
+	private TelephonyManager _telephonyManager;
 
 	/** Called when the activity is first created. */
     @Override
@@ -23,7 +23,7 @@ public class Ranmelo extends Activity {
      */
     private void setPhoneStateLisner()
     {
-    	_m_TelManager = (TelephonyManager)getSystemService( Context.TELEPHONY_SERVICE );
-    	_m_TelManager.listen( new MyPhoneStateListener(this), PhoneStateListener.LISTEN_CALL_STATE );
+    	_telephonyManager = (TelephonyManager)getSystemService( Context.TELEPHONY_SERVICE );
+    	_telephonyManager.listen( new MyPhoneStateListener(this), PhoneStateListener.LISTEN_CALL_STATE );
     }
 }
